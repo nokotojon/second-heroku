@@ -22,20 +22,22 @@ class SessionsController < ApplicationController
   def log_in(user)
     session[:user_id] = user.id
   end
+
   
+ 
+  
+     def log_out
+    session.delete(:user_id)
+    @current_user = nil
+  end
+  
+    
   def sessions_email
     params.require(:session).permit(:email)
   end 
   
   def sessions_password
     params.require(:session).permit(:password)
-  end
-  
- 
-  
-    def log_out
-    session.delete(:user_id)
-    @current_user = nil
   end
 
 end
