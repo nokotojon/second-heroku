@@ -13,12 +13,14 @@
               <%= image_tag 'icons/heart-black.png', class: 'topic-index-icon' %>
               
               <% end %>
-              ＜% else %>
-               <%= link_to favorites_path(topic_id: topic.id), method: :delete do %>
-                <%= image_tag 'icons/heart-black.png',class: 'topic-index-icon-heart-iine' %>
+              <% else %>
+               <%= link_to"/favorites#{topic.id}/destroy", method: :post do %>
+                <%= image_tag 'icons/heart-black.png',class: '.topic-index-icon-heart-iine' %>
+          
                 <% end %>
-            <%= image_tag 'icons/comment.png', class: 'topic-index-icon' %>
-            <p class="topic-text">
+                     <%= image_tag 'icons/comment.png', class: 'topic-index-icon' %>
+                <% end %>
+                <p class="topic-text">
               <%= topic.description %>
               
             </p>
