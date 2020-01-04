@@ -109,6 +109,7 @@ h1, h2 {
 .topic-index-wrapper {
   padding-top: 70px;
   background-color: #fafafa;
+  
   .topic-index-single {
     background-color: #fff;
     padding-top: 20px;
@@ -136,20 +137,14 @@ h1, h2 {
       width: 35px;
       height: 30px;
       margin-left: 20px;
-      
+    }  
     .topic-index-icon-heart-iine {
       width: 35px;
       height: 30px;
       margin-left: 20px;
-     background-color: #BDBDBD;
+      background-color: #FF0000;
     }
-    
-    .topic-index-icon-heart {
-      width: 35px;
-      height: 30px;
-      margin-left: 20px;
-      
+    .heart-red {color:#e54747;
     }
   }
-}
 }
