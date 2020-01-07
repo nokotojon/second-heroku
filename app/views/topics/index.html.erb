@@ -14,13 +14,15 @@
               
               <% end %>
             <% else %>
+            <!-- イイネ削除機能 !-->
               <%= link_to favorites_path(topic_id: topic.id), method: :delete do %>
                 <%= image_tag 'いいねハート.jpg',class: 'topic-index-icon-heart-iine' %>
-          
+                <%= topic.favorite_users.count %> <!-- イイネ数を数えて表示 !-->
               <% end %>
                 <%= image_tag 'icons/comment.png', class: 'topic-index-icon' %>
             <% end %>
-            <%= @favorites_count %>
+            
+  
             <p class="topic-text">
               <%= topic.description %>
               

@@ -1,6 +1,8 @@
 class FavoritesController < ApplicationController
   def index
+    @post = Post.find_by(id: params[:id])
     @favorite_topics = current_user.favorite_topics
+    @favorite_count = Favorite.where(post_id: @post.id).count
   end
    
   def create
