@@ -19,14 +19,22 @@
                 <%= image_tag 'いいねハート.jpg',class: 'topic-index-icon-heart-iine' %>
                 <%= topic.favorite_users.count %> <!-- イイネ数を数えて表示 !-->
               <% end %>
-                <%= image_tag 'icons/comment.png', class: 'topic-index-icon' %>
+
             <% end %>
             
-  
+                <!-- コメントのアイコンにリンクを乗せる　!-->
+                <%= link_to coments_new_path(topic_id: topic.id) do %> 
+                 <%= image_tag('icons/comment.png',class: 'topic-index-icon') %>
+                <% end %>
             <p class="topic-text">
               <%= topic.description %>
-              
             </p>
+              <h2>コメント欄</h2>
+              <% topic.coments.each do |coment| %>
+                 <p class="topic-text">
+                   <%= coment.discription %>
+                 </p>
+              <% end %>     
           </div>
         </div>
       </div>

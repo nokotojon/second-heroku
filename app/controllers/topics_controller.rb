@@ -1,7 +1,8 @@
 class TopicsController < ApplicationController
-def index
-  @topics = Topic.all.includes(:favorite_users)
-end
+  
+  def index
+    @topics = Topic.all.includes(:favorite_users, :coment_users)
+  end
   
   def new
     @topic = Topic.new
