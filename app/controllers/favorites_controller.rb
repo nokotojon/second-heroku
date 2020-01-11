@@ -21,7 +21,7 @@ class FavoritesController < ApplicationController
     favorite.destroy if favorite.present?
     
     if favorite.destroyed?
-      redirect_to topics_path, sucsess: 'お気に入りを解除しました'
+      redirect_to topics_path, success: 'お気に入りを解除しました'
     else
       redirect_to topics_path, danger: 'お気に入り解除に失敗しました'
     end
